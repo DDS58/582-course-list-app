@@ -31,9 +31,11 @@ export default {
   methods: {
     adding() {
       this.count++;
+      this.availability = false;
     },
     minus() {
       this.count--;
+      this.availability = true;
     },
   },
 };

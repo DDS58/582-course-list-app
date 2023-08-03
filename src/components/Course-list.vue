@@ -5,7 +5,8 @@
     <p>Description : {{ course.description }}</p>
     <p>Course ID : {{ course.id }}</p>
     <p>Student #: {{ course.student + count }} / 20</p>
-    <button @click="adding">Add</button>
+    <button :class="av" v-if="availability" @click="adding">Add</button>
+    <button :class="nav" v-else @click="minus">Remove</button>
   </div>
 </template>
 
@@ -22,11 +23,17 @@ export default {
   data() {
     return {
       count: 0,
+      av: "av-label",
+      nav: "av-label disabled",
+      availability: true,
     };
   },
   methods: {
     adding() {
       this.count++;
+    },
+    minus() {
+      this.count--;
     },
   },
 };

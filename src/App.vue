@@ -23,6 +23,9 @@ export default {
   data() {
     return {
       count: 0,
+      av: "av-label",
+      nav: "av-label disabled",
+      availability: true,
       courses: [
         {
           name: "Math",
@@ -44,6 +47,9 @@ export default {
     addOne() {
       this.count++;
     },
+    removeOne() {
+      this.count--;
+    },
   },
 };
 </script>
@@ -59,5 +65,13 @@ export default {
 }
 div {
   border: #2c3e50 2px solid;
+}
+
+.av-label {
+  background-color: lightblue;
+}
+
+.disabled {
+  background-color: lightcoral;
 }
 </style>
